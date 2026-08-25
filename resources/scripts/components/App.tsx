@@ -14,6 +14,7 @@ import AuthenticatedRoute from '@/components/elements/AuthenticatedRoute';
 import { ServerContext } from '@/state/server';
 import '@/assets/tailwind.css';
 import Spinner from '@/components/elements/Spinner';
+import { NookThemeProvider } from '@/theme';
 
 const DashboardRouter = lazy(() => import(/* webpackChunkName: "dashboard" */ '@/routers/DashboardRouter'));
 const ServerRouter = lazy(() => import(/* webpackChunkName: "server" */ '@/routers/ServerRouter'));
@@ -60,33 +61,35 @@ const App = () => {
         <>
             <GlobalStylesheet />
             <StoreProvider store={store}>
-                <ProgressBar />
-                <div css={tw`mx-auto w-auto`} className='nook-container'>
-                    <Router history={history}>
-                        <Switch>
-                            <Route path={'/auth'}>
-                                <Spinner.Suspense>
-                                    <AuthenticationRouter />
-                                </Spinner.Suspense>
-                            </Route>
-                            <AuthenticatedRoute path={'/server/:id'}>
-                                <Spinner.Suspense>
-                                    <ServerContext.Provider>
-                                        <ServerRouter />
-                                    </ServerContext.Provider>
-                                </Spinner.Suspense>
-                            </AuthenticatedRoute>
-                            <AuthenticatedRoute path={'/'}>
-                                <Spinner.Suspense>
-                                    <DashboardRouter />
-                                </Spinner.Suspense>
-                            </AuthenticatedRoute>
-                            <Route path={'*'}>
-                                <NotFound />
-                            </Route>
-                        </Switch>
-                    </Router>
-                </div>
+                <NookThemeProvider>
+                    <ProgressBar />
+                    <div css={tw`mx-auto w-auto`} className='nook-container'>
+                        <Router history={history}>
+                            <Switch>
+                                <Route path={'/auth'}>
+                                    <Spinner.Suspense>
+                                        <AuthenticationRouter />
+                                    </Spinner.Suspense>
+                                </Route>
+                                <AuthenticatedRoute path={'/server/:id'}>
+                                    <Spinner.Suspense>
+                                        <ServerContext.Provider>
+                                            <ServerRouter />
+                                        </ServerContext.Provider>
+                                    </Spinner.Suspense>
+                                </AuthenticatedRoute>
+                                <AuthenticatedRoute path={'/'}>
+                                    <Spinner.Suspense>
+                                        <DashboardRouter />
+                                    </Spinner.Suspense>
+                                </AuthenticatedRoute>
+                                <Route path={'*'}>
+                                    <NotFound />
+                                </Route>
+                            </Switch>
+                        </Router>
+                    </div>
+                </NookThemeProvider>
             </StoreProvider>
         </>
     );
