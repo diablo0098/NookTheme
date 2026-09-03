@@ -1,4 +1,4 @@
-<!-- resources/css/arix-variables.css -->
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
 :root{
   --arix-bg: #0b0c0e;
   --arix-surface: #24180f;
