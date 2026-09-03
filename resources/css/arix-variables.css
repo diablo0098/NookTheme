@@ -1,0 +1,15 @@
+<!-- resources/css/arix-variables.css -->
+:root{
+  --arix-bg: #0b0c0e;
+  --arix-surface: #24180f;
+  --arix-surface-2: #381f14;
+  --arix-accent: #2f6df6;
+  --arix-accent-2: #1f4ed8;
+  --arix-accent-3: #ea6c54;
+  --arix-primary-text: #e6eef8;
+  --arix-muted: #b8927a;
+  --arix-warning: #c79c2b;
+  --arix-radius: 12px;
+  --arix-shadow: 0 8px 40px rgba(0,0,0,0.6);
+  --font-sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
