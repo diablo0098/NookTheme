@@ -1,0 +1,66 @@
+/* resources/css/arix-overrides.css */
+@import './arix-variables.css';
+
+body {
+  background-color: var(--arix-bg);
+  color: var(--arix-primary-text);
+  font-family: var(--font-sans);
+}
+
+/* Panels / cards */
+.panel, .card, .auth-card, .panel--dark {
+  background: linear-gradient(180deg, var(--arix-surface) 0%, var(--arix-surface-2) 100%);
+  border-radius: var(--arix-radius);
+  box-shadow: var(--arix-shadow);
+  color: var(--arix-primary-text);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* Login card */
+.auth-card {
+  padding: 1.25rem;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+/* Buttons */
+.btn-primary, .btn.btn-primary {
+  background: linear-gradient(180deg, var(--arix-accent) 0%, var(--arix-accent-2) 100%);
+  color: #fff;
+  border-radius: 10px;
+  padding: 0.6rem 1.1rem;
+  border: none;
+}
+.btn-primary:hover { filter: brightness(0.95); }
+
+/* Floating Select Style */
+.select-style-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+  background: linear-gradient(180deg, var(--arix-accent) 0%, var(--arix-accent-2) 100%);
+  color: #fff;
+  border-radius: 12px;
+  padding: 0.7rem 1rem;
+  box-shadow: 0 10px 60px rgba(47,109,246,0.28);
+}
+
+/* Announcement banner */
+.announcement {
+  background: linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border-left: 4px solid var(--arix-warning);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+}
+
+/* Badges */
+.badge-online { background: #2f9e3f; color: #fff; border-radius: 8px; padding: 0.25rem 0.5rem; }
+.badge-offline { background: #6b2230; color: #fff; border-radius: 8px; padding: 0.25rem 0.5rem; }
+
+/* Header search */
+.header-search input { background: rgba(255,255,255,0.02); color: var(--arix-primary-text); border: 1px solid rgba(255,255,255,0.03); padding: 0.5rem 0.75rem; border-radius: 8px; }
+
+/* Small tweaks */
+.footer { color: rgba(230,238,248,0.6); }
+
