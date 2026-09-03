@@ -1,3 +1,4 @@
+// tailwind.config.js -- add Arix palette
 const colors = require('tailwindcss/colors');
 
 const gray = {
@@ -20,12 +21,22 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                header: ['"IBM Plex Sans"', '"Roboto"', 'system-ui', 'sans-serif'],
+                header: ['"IBM Plex Sans"', 'Inter', 'system-ui', 'sans-serif'],
             },
             colors: {
                 black: '#131a20',
-                // "primary" and "neutral" are deprecated, prefer the use of "blue" and "gray"
-                // in new code.
+                arix: {
+                    DEFAULT: '#2f6df6',
+                    50: '#e9f0ff',
+                    100: '#d6e4ff',
+                    200: '#b8d1ff',
+                },
+                arixBrown: {
+                    100: '#3a2114',
+                    200: '#24180f',
+                    300: '#381f14'
+                },
+                // preserve existing palettes
                 primary: colors.blue,
                 orange: colors.orange,
                 gray: gray,
